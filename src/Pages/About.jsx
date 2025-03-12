@@ -1,11 +1,5 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLaptopCode,
-  faPalette,
-  faMobileAlt,
-  faCamera,
-} from "@fortawesome/free-solid-svg-icons";
 import { Mail, Phone, Calendar, MapPin } from "lucide-react";
 import FloatingDockDemo from "../Pages/FloatingDockDemo";
 import profileImage from "../Component/pics/Profile1.jpg";

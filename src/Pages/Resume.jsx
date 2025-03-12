@@ -6,7 +6,7 @@ import {  useNavigate } from "react-router-dom";
 import MultiStepLoaderDemo from "./multi-step-loader-demo";
 import MultiStepLoaderDemoExp from "./multi-step-loader-demoExp";
 
-const About = () => {
+const Resume = () => {
     const skills = [
         { name: "Html", level: 70 },
         { name: "CSS", level: 80 },
@@ -80,8 +80,8 @@ const About = () => {
           <button onClick={() => Navigate("/")}>About</button>
           <button onClick={() => Navigate("resume")}>Resume</button>
           <button onClick={() => Navigate("/portfolio")}>Portfolio</button>
-          <button onClick={() => Navigate}>Blog</button>
-          <button onClick={() => Navigate}>Contact</button>
+          <button onClick={() => Navigate('/blog')}>Blog</button>
+          <button onClick={() => Navigate('/contact')}>Contact</button>
         </div>
 
         {/* About Section */}
@@ -164,4 +164,4 @@ const InfoItem = ({ icon, label, value }) => (
 
 
 
-export default About;
+export default Resume
