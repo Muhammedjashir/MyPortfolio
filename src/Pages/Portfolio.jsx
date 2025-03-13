@@ -47,17 +47,17 @@ const Portfolio = () => {
     : projects.filter(project => project.category.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
-    <div className="min-h-screen flex bg-[#131212] text-white p-6">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-[#131212] text-white p-4 lg:p-6">
       {/* Sidebar */}
-      <div className="bg-[#222222] p-6 rounded-2xl shadow-lg max-w-sm w-[300px] min-h-screen flex flex-col justify-between items-center border border-gray-700 mt-10 mb-10 sticky top-10 ml-15">
-        <div className="relative mx-auto w-40 h-50 rounded-3xl overflow-hidden mt-10">
+      <div className="bg-[#222222] p-4 lg:p-6 rounded-2xl shadow-lg w-full lg:max-w-sm lg:w-[300px] lg:min-h-screen flex flex-col justify-between items-center border border-gray-700 mt-4 lg:mt-10 mb-4 lg:mb-10 lg:ml-10 lg:sticky lg:top-10">
+        <div className="relative mx-auto w-32 h-32 lg:w-40 lg:h-50 rounded-3xl overflow-hidden mt-4 lg:mt-10">
           <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
         </div>
 
-        <h2 className="text-2xl font-semibold mt-4 max-w-[150px] text-center">Muhammed Jashir T</h2>
+        <h2 className="text-xl lg:text-2xl font-semibold mt-4 max-w-[150px] text-center">Muhammed Jashir T</h2>
         <p className="bg-[#2e2e2e] text-sm px-4 py-1 rounded-md inline-block mt-2">MERN Developer</p>
 
-        <div className="mt-6 border-t border-gray-700 pt-4 space-y-4">
+        <div className="mt-6 border-t border-gray-700 pt-4 space-y-4 w-full">
           <InfoItem icon={<Mail size={18} color="#FFD700" />} label="EMAIL" value="jashirmhd71@gmail.com" />
           <InfoItem icon={<Phone size={18} color="#FFD700" />} label="PHONE" value="+91 7356490668" />
           <InfoItem icon={<Calendar size={18} color="#FFD700" />} label="BIRTHDAY" value="Sep 29, 2000" />
@@ -70,8 +70,8 @@ const Portfolio = () => {
       </div>
 
       {/* Main Content */}
-      <div className="w-[820px] p-8 border border-gray-700 rounded-2xl ml-10 bg-[#222222] mt-10 mb-10">
-        <div className="flex space-x-6 text-lg float-right border border-gray-800 w-[400px] h-[50px] rounded-2xl bg-[#383636] justify-center items-center font-serif cursor-pointer">
+      <div className="w-full lg:w-[820px] p-4 lg:p-8 border border-gray-700 rounded-2xl mt-4 lg:mt-10 mb-4 lg:mb-10 lg:ml-10 bg-[#222222]">
+        <div className="flex space-x-4 lg:space-x-6 text-sm lg:text-lg float-right border border-gray-800 w-full lg:w-[400px] h-[40px] lg:h-[50px] rounded-2xl bg-[#383636] justify-center items-center font-serif cursor-pointer">
           <button onClick={() => Navigate("/")}>About</button>
           <button onClick={() => Navigate("/resume")}>Resume</button>
           <button onClick={() => Navigate("/portfolio")}>Portfolio</button>
@@ -80,17 +80,17 @@ const Portfolio = () => {
         </div>
 
         <div className="mt-4">
-          <h2 className="text-3xl font-semibold border-b-4 rounded-xl border-yellow-500 inline-block pb-1">Portfolio</h2>
+          <h2 className="text-2xl lg:text-3xl font-semibold border-b-4 rounded-xl border-yellow-500 inline-block pb-1">Portfolio</h2>
         </div>
 
-        <div className="flex space-x-6 mb-6 text-white mt-6">
+        <div className="flex space-x-4 lg:space-x-6 mb-6 text-white mt-6">
           <button className={`font-semibold ${selectedCategory === "All" ? "text-yellow-400" : ""}`} onClick={() => setSelectedCategory("All")}>All</button>
           <button className={`hover:text-yellow-400 transition ${selectedCategory === "Applications" ? "text-yellow-400" : ""}`} onClick={() => setSelectedCategory("Applications")}>Applications</button>
           <button className={`hover:text-yellow-400 transition ${selectedCategory === "Websites" ? "text-yellow-400" : ""}`} onClick={() => setSelectedCategory("Websites")}>Websites</button>
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
@@ -112,14 +112,14 @@ const InfoItem = ({ icon, label, value }) => (
 
 const ProjectCard = ({ title, category, url, image }) => (
   <a href={url} target="_blank" rel="noopener noreferrer" className="relative text-white rounded-lg p-4 shadow-md flex flex-col items-center cursor-pointer group hover:scale-105 transition-transform">
-    <div className="w-[250px] h-32 bg-gray-300 rounded-xl flex items-center justify-center text-center absolute inset-0 transition-opacity group-hover:opacity-0">
+    <div className="w-full h-32 bg-gray-300 rounded-xl flex items-center justify-center text-center absolute inset-0 transition-opacity group-hover:opacity-0">
       <div className="text-sm text-black">
         <p className="font-semibold">Hover to View</p>
         <p>This site is private.</p>
       </div>
     </div>
-    <div className="w-[250px] h-32 rounded-xl bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity absolute inset-0" style={{ backgroundImage: `url(${image})` }}></div>
-    <h3 className="mt-36 text- font-semibold">{title}</h3>
+    <div className="w-full h-32 rounded-xl bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity absolute inset-0" style={{ backgroundImage: `url(${image})` }}></div>
+    <h3 className="mt-36 text-lg font-semibold">{title}</h3>
     <p className="text-sm text-gray-400">{category}</p>
   </a>
 );
