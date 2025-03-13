@@ -29,7 +29,7 @@ const Portfolio = () => {
     { 
       title: "Furniture Static", 
       category: "Websites", 
-      url: "https://voicence-task.vercel.app/",
+      url: "https://voicence-task-qdnn.vercel.app/",
       image: "https://images01.nicepagecdn.com/page/10/72/website-template-preview-107234.jpg"
     },
     { 
