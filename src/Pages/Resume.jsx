@@ -85,7 +85,7 @@ const Resume = () => {
 
         {/* About Section */}
         <div className="mt-4">
-          <h2 className="ext-2xl lg:text-3xl font-semibold border-b-5 rounded-xl border-yellow-500 inline-block pb-1">
+          <h2 className="text-2xl lg:text-3xl font-semibold border-b-5 rounded-xl border-yellow-500 inline-block pb-1">
             Resume
           </h2>
           <p className="mt-8 text-gray-400">
